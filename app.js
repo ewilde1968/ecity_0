@@ -8,7 +8,6 @@ const express = require('express'),
       path = require('path'),
       pug = require('pug'),
       routes = require('./routes'),
-      cookieParser = require('cookie-parser'),
       errHandler = require('errorhandler'),
       morgan = require('morgan'),
       fav = require('serve-favicon');
@@ -24,11 +23,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(fav('./public/images/favicon.png'));
 app.use(morgan('dev'));
 app.use(express.json());
-app.use(cookieParser('ecityCookieSecret'));
 app.use(errHandler());
 
 // view entry points
-app.get('/', routes.index);
+app.get('/', routes.index); // home page
+// settings/acct page
+// neighborhood routes
+// search route
 
 // setup DB
 app.locals.database = new myDatabase();
