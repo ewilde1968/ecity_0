@@ -6,6 +6,5 @@ const pug = require('pug'),
 
 //app.get('/', routes.index);
 exports.index = function(req, res){
-    console.log(pug.render(indexFile({err:false, defaultUsername:''})));
-    res.write(pug.render(indexFile({err:false, defaultUsername:''})));
+    res.send(pug.render(indexFile({err:false, defaultUsername:''})));
 };

@@ -31,8 +31,8 @@ app.use(errHandler());
 app.get('/', routes.index);
 
 // setup DB
-var db = new myDatabase();
-db.initialize();
+app.locals.database = new myDatabase();
+app.locals.database.initialize();
 
 // setup server and main loop
 var server = http.createServer(app).listen(3000);

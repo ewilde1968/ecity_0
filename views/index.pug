@@ -23,7 +23,7 @@ block content
             required="required"
             value=""
         )
-      p#errorP(class="errorString notShown") Invalid username or password
+      p#errorP(class='errorString'+(err?'':' notShown')) Invalid username or password
       p
         button.rightForm Sign In
         a.leftForm(href="/user/new") Need an account?
